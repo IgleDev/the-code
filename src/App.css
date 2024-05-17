@@ -81,6 +81,18 @@
   border: 2px solid #05ff05;
 }
 
+.historial{
+  display: flex;
+  margin-top: 2%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.historial p{
+  color: white;
+  font-size: 24px;
+}
+
 .guess{
   display: flex;
   margin-top: 2%;

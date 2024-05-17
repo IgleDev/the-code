@@ -6,6 +6,9 @@ export default function Casillas({ playerCodes }) {
     const [contadores, setContadores] = useState({ player1: 0, player2: 0 });
     const [winPlayer1, setWinPlayer1] = useState(false);
     const [winPlayer2, setWinPlayer2] = useState(false);
+    const [historialPlayer1, setHistorialPlayer1] = useState([]);
+    const [historialPlayer2, setHistorialPlayer2] = useState([]);
+
 
     const handleChangePlayer = (e, code, setCode) => {
         setCode({ ...code, [e.target.name]: e.target.value });
@@ -14,8 +17,6 @@ export default function Casillas({ playerCodes }) {
     const handleKeyDownPlayer = (e, code, rivalCode, setCode, playerKey) => {
         if (e.key === 'Enter') {
             const playerCode = Object.values(code).join('');
-            console.log('Codigo del jugador', playerCode);
-            console.log('Codigo rival: ', rivalCode);
 
             let contador = 0;
             for (let i = 0; i < rivalCode.length; i++) {
@@ -40,6 +41,12 @@ export default function Casillas({ playerCodes }) {
                 ...prevContadores,
                 [playerKey]: contador
             }));
+
+            if (playerKey === 'player1') {
+                setHistorialPlayer1(prevHistorial => [...prevHistorial, playerCode]);
+            } else if (playerKey === 'player2') {
+                setHistorialPlayer2(prevHistorial => [...prevHistorial, playerCode]);
+            }
         }
     };
 
@@ -117,6 +124,10 @@ export default function Casillas({ playerCodes }) {
                         />
                     </div>
                 </div>
+            </div>
+            <div className="historial">
+                <p>Last Code: {historialPlayer1[historialPlayer1.length - 1]}</p>
+                <p>Last Code: {historialPlayer1[historialPlayer2.length - 1]}</p>
             </div>
             <div className="guess">
                 <p>Player 1 guesses: {contadores.player1}</p>
