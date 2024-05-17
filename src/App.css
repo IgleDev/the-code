@@ -73,8 +73,12 @@
   border: transparent;
 }
 
+.box-guess{
+  border: 2px solid #ff9f05;
+}
+
 .box-win{
-  border: 2px solid rgb(5, 255, 5);
+  border: 2px solid #05ff05;
 }
 
 .guess{

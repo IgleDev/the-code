@@ -4,6 +4,8 @@ export default function Casillas({ playerCodes }) {
     const [code1, setCode1] = useState({ codePlayer1: '', codePlayer2: '', codePlayer3: '', codePlayer4: '' });
     const [code2, setCode2] = useState({ codePlayer1: '', codePlayer2: '', codePlayer3: '', codePlayer4: '' });
     const [contadores, setContadores] = useState({ player1: 0, player2: 0 });
+    const [winPlayer1, setWinPlayer1] = useState(false);
+    const [winPlayer2, setWinPlayer2] = useState(false);
 
     const handleChangePlayer = (e, code, setCode) => {
         setCode({ ...code, [e.target.name]: e.target.value });
@@ -17,15 +19,21 @@ export default function Casillas({ playerCodes }) {
 
             let contador = 0;
             for (let i = 0; i < rivalCode.length; i++) {
-                if (playerCode.includes(rivalCode[i]) && playerCode[i] === rivalCode[i]) {
+                if (playerCode.includes(rivalCode[i])) {
                     contador++;
                 }
             }
 
             if (playerCode === rivalCode) {
-                alert('¡Ganaste!');
+                if (playerKey === 'player1') {
+                    setWinPlayer1(true);
+                } else if (playerKey === 'player2') {
+                    setWinPlayer2(true);
+                }
             } else {
                 setCode({ codePlayer1: '', codePlayer2: '', codePlayer3: '', codePlayer4: '' });
+                setWinPlayer1(false);
+                setWinPlayer2(false);
             }
 
             setContadores(prevContadores => ({
@@ -39,7 +47,7 @@ export default function Casillas({ playerCodes }) {
         <>
             <div className="games">
                 <div className="player1">
-                    <div className="box">
+                    <div className={`box ${winPlayer1 && contadores.player1 === 4 ? 'box-win' : (contadores.player1 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer1"
@@ -47,7 +55,7 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code1, setCode1)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer1 && contadores.player1 === 4 ? 'box-win' : (contadores.player1 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer2"
@@ -55,7 +63,7 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code1, setCode1)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer1 && contadores.player1 === 4  ? 'box-win' : (contadores.player1 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer3"
@@ -63,19 +71,19 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code1, setCode1)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer1 && contadores.player1 === 4 ? 'box-win' : (contadores.player1 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer4"
                             value={code1.codePlayer4}
                             onChange={(e) => handleChangePlayer(e, code1, setCode1)} maxLength={1}
-                            onKeyDown={(e) => handleKeyDownPlayer(e, code1, playerCodes.code2, setCode1, 'player1')}
+                            onKeyDown={(e) => {if (e.key === 'Enter') handleKeyDownPlayer(e, code1, playerCodes.code2, setCode1, 'player1')}}
                         />
                     </div>
                 </div>
 
                 <div className="player2">
-                    <div className="box">
+                <div className={`box ${winPlayer2 && contadores.player2 === 4 ? 'box-win' : (contadores.player2 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer1"
@@ -83,7 +91,7 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code2, setCode2)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer2 && contadores.player2 ? 'box-win' : (contadores.player2 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer2"
@@ -91,7 +99,7 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code2, setCode2)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer2 && contadores.player2 ? 'box-win' : (contadores.player2 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer3"
@@ -99,7 +107,7 @@ export default function Casillas({ playerCodes }) {
                             onChange={(e) => handleChangePlayer(e, code2, setCode2)} maxLength={1}
                         />
                     </div>
-                    <div className="box">
+                    <div className={`box ${winPlayer2 && contadores.player2 ? 'box-win' : (contadores.player2 > 0 ? 'box-guess' : 'box')}`}>
                         <input
                             type="text"
                             name="codePlayer4"
