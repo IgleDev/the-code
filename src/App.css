@@ -72,3 +72,19 @@
   text-align: center;
   border: transparent;
 }
+
+.box-win{
+  border: 2px solid rgb(5, 255, 5);
+}
+
+.guess{
+  display: flex;
+  margin-top: 2%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.guess p{
+  color: #ffffff;
+  font-size: 24px;
+}
