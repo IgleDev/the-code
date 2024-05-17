@@ -127,7 +127,7 @@ export default function Casillas({ playerCodes }) {
             </div>
             <div className="historial">
                 <p>Last Code: {historialPlayer1[historialPlayer1.length - 1]}</p>
-                <p>Last Code: {historialPlayer1[historialPlayer2.length - 1]}</p>
+                <p>Last Code: {historialPlayer2[historialPlayer2.length - 1]}</p>
             </div>
             <div className="guess">
                 <p>Player 1 guesses: {contadores.player1}</p>
