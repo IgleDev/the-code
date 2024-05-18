@@ -191,6 +191,14 @@
     text-align: center;
     border: transparent;
   }
+
+  .box-guess{
+    border: 2px solid #ff9f05;
+  }
+  
+  .box-win{
+    border: 2px solid #05ff05;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -213,5 +221,13 @@
     color: #ffffff;
     text-align: center;
     border: transparent;
+  }
+
+  .box-guess{
+    border: 2px solid #ff9f05;
+  }
+  
+  .box-win{
+    border: 2px solid #05ff05;
   }
 }
