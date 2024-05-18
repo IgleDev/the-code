@@ -3,13 +3,13 @@
 ‘The Code’ is a game which has risen in popularity lately, and that consists on a 1v1 game where both players write down a 4-digit secret code that the other person will have to guess in less time than their opponent.
 
 ## Main Page
-![main page](https://github.com/IgleDev/the-code/assets/72018196/9084fde5-1e8d-402e-9c41-d2c95491304e)
+![main page](https://github.com/IgleDev/the-code/assets/72018196/1d6fb7f8-32c6-4653-9e9b-0d6260b5040d)
 
 ## Code with Blur
-![codewithBlur](https://github.com/IgleDev/the-code/assets/72018196/916dd32f-23a9-406b-93d3-4c73dec044a8)
+![image](https://github.com/IgleDev/the-code/assets/72018196/fad9802d-03f0-4fe9-9abd-5c0bf6c4b214)
 
 ## Attemps 
-![attemps](https://github.com/IgleDev/the-code/assets/72018196/4d023111-4ad5-4433-a011-2ca18d0b2295)
+![image](https://github.com/IgleDev/the-code/assets/72018196/33a8761f-9028-4aab-a517-8ddd0c51b20f)
 
 ## Win Case
-![winCase](https://github.com/IgleDev/the-code/assets/72018196/f7cfdd1c-803a-45cd-a8f8-3bf3077053db)
+![image](https://github.com/IgleDev/the-code/assets/72018196/2a6f52af-529c-4199-9297-aec375179e44)
